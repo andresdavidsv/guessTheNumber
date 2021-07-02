@@ -6,23 +6,34 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
-  Text,
   View
 } from 'react-native';
 
 //Components
 import Header from './src/components/Header'
 import StartGameScreen from './src/views/StartGameScreen';
+import GameScreen from './src/views/GameScreen';
 
 const App = () => {
+  const [userNumber, setUserNumber] = useState()
+
+  const handlerStartGame = selectedNumber => {
+    setUserNumber(selectedNumber)
+  }
+
+  let content = <StartGameScreen onStartGame={handlerStartGame} />
+
+  if (userNumber) {
+    content = <GameScreen />
+  }
 
   return (
     <View style={styles.container}>
       <Header title={'Adivina el numero'} />
-      <StartGameScreen/>
+      {content}
     </View>
   );
 };
