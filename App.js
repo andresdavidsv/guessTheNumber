@@ -6,29 +6,26 @@
  * @flow strict-local
  */
 
-import React, { useState } from 'react';
-import {
-  StyleSheet,
-  View
-} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
 
 //Components
-import Header from './src/components/Header'
+import Header from './src/components/Header';
 import StartGameScreen from './src/views/StartGameScreen';
 import GameScreen from './src/views/GameScreen';
 
 const App = () => {
-  const [userNumber, setUserNumber] = useState()
+  const [userNumber, setUserNumber] = useState();
 
   const handlerStartGame = selectedNumber => {
-    setUserNumber(selectedNumber)
-  }
+    setUserNumber(selectedNumber);
+  };
 
-  let content = <StartGameScreen onStartGame={handlerStartGame} />
-
-  if (userNumber) {
-    content = <GameScreen />
-  }
+  const content = userNumber ? (
+    <GameScreen onEndGame={handlerStartGame} userOption={userNumber} />
+  ) : (
+    <StartGameScreen onStartGame={handlerStartGame} />
+  );
 
   return (
     <View style={styles.container}>
