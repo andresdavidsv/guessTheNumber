@@ -1,14 +1,14 @@
-import React from 'react'
-import { ViewBase, Text, StyleSheet } from 'react-native'
-import { colors } from '../resources/color'
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import {colors} from '../resources/color';
 
 const NumberContainer = props => {
   return (
-    <View style={styles.container} >
-      <Text style={styles.number} >{props.children} </Text>
+    <View style={styles.container}>
+      <Text style={styles.number}>{props.children} </Text>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -18,12 +18,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 10,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   number: {
     color: colors.red,
-    fontSize: 22
-  }
-})
+    fontSize: 22,
+  },
+});
 
-export default NumberContainer
+export default NumberContainer;

@@ -1,19 +1,19 @@
-import React from 'react'
-import { TextInput, StyleSheet, ProgressViewIOSComponent } from 'react-native'
+import React from 'react';
+import {TextInput, StyleSheet} from 'react-native';
 // Resources
-import { colors } from '../resources/color';
+import {colors} from '../resources/color';
 
-const Input = props => (
-  <TextInput style={{ ...styles.input, ...props.style }} />
-)
+const Input = ({style = {}, ...props}) => {
+  return <TextInput style={{...styles.input, ...style}} {...props} />;
+};
 
 const styles = StyleSheet.create({
   input: {
-    height: 30,
+    height: 40,
     borderBottomColor: colors.blackPearl,
     borderBottomWidth: 1,
-    marginVertical: 10
-  }
-})
+    marginVertical: 10,
+  },
+});
 
-export default Input
+export default Input;
