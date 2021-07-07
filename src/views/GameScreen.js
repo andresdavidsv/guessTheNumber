@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 import React, {useState, useEffect, useRef} from 'react';
 import {View, Button, Text, Dimensions, StyleSheet, Alert} from 'react-native';
 import NumberContainer from '../components/NumberCotainer';
 import Card from '../components/Card';
 import {colors} from '../resources/color';
-=======
-import React, { useState, useEffect, useRef } from 'react';
-import { View, Button, Text, Dimensions, StyleSheet, Alert } from 'react-native';
-import NumberContainer from '../components/NumberCotainer';
-import Card from '../components/Card';
-import { colors } from '../resources/color';
->>>>>>> 497a8594d89eb76bbf5e589174c640a2a502dffb
 
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
@@ -76,15 +68,11 @@ const GameScreen = ({onEndGame, onGameOver, userOption}) => {
         <Button title="MENOR" onPress={handleNextGuess('lower')} />
         <Button title="MAYOR" onPress={handleNextGuess('greater')} />
       </Card>
-<<<<<<< HEAD
       <Button
         title="TERMINAR"
         onPress={handleEndGame}
         color={colors.blackPearl}
       />
-=======
-      <Button title="TERMINAR" onPress={handleEndGame} color={colors.blackPearl} />
->>>>>>> 497a8594d89eb76bbf5e589174c640a2a502dffb
     </View>
   );
 };
